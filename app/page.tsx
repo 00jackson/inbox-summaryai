@@ -34,10 +34,9 @@ export default function HomePage() {
       {loading && <p className="mt-6 animate-pulse text-muted-foreground">AI is thinking...</p>}
 
       {summary && (
-        <div
-          className="mt-6 p-4 rounded-md border bg-muted prose prose-sm max-w-none"
-          dangerouslySetInnerHTML={{ __html: formatGeminiOutput(summary) }}
-        />
+        <div className="mt-6 p-3 border rounded prose prose-sm dark:prose-invert max-w-none">
+          <div dangerouslySetInnerHTML={{ __html: formatGeminiOutput(summary) }} />
+        </div>
       )}
     </main>
   );
