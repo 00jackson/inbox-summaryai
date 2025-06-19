@@ -24,13 +24,14 @@ export default function EmailInput({ onSubmit }: EmailInputProps) {
 
   return (
     <div className="space-y-4">
-      <Label htmlFor="email-text">Paste Email Text</Label>
+      <Label htmlFor="email-text">Let's Summarise your next thread.</Label>
       <Textarea
         id="email-text"
         rows={10}
         placeholder="Paste your email thread here..."
         value={emailText}
         onChange={(e) => setEmailText(e.target.value)}
+        className="my-2"
       />
 
       <div className="flex items-center gap-4">
