@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📬 InboxSummary
 
-## Getting Started
+**InboxSummary** is an AI-powered Email Digest Generator that helps users save time by summarizing their email threads into actionable daily or weekly reports. It's built for focus, speed, and future B2B extensibility.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- ✅ Paste email threads and get clean, structured summaries
+- ✅ Choose summary mode: **Daily** or **Weekly**
+- ✅ AI-generated insights using Gemini 1.5 Flash
+- ✅ Beautiful summary formatting using Markdown-style parsing
+- ✅ Summary history stored via `localStorage`
+- ✅ Export as PDF (via `html2pdf.js`)
+- ❌ Notion & Slack export (explored but removed from MVP)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧠 Tech Stack
 
-## Learn More
+| Layer        | Tech                       |
+|--------------|----------------------------|
+| Framework    | Next.js (App Router)       |
+| Styling      | TailwindCSS + ShadCN UI    |
+| UI Layer     | ShadCN, Radix UI, Lucide   |
+| State Mgmt   | React state + localStorage |
+| AI API       | Google Gemini (1.5 Flash)  |
+| Deployment   | Netlify                    |
+| Tooling      | ESLint, TypeScript         |
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ⚙️ Setup Instructions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 1. Clone and Install
 
-## Deploy on Vercel
+* git clone https://github.com/yourname/inbox-summary.git
+* cd inbox-summary
+* pnpm install
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 2. Environment Variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Create a .env.local file:
+* GEMINI_API_KEY=your_gemini_api_key_here
+
+### 3. Run Dev Server
+
+pnpm dev 
+
+### 4. Deploy to Netlify
+
+pnpm add -D @netlify/next
+npx netlify login
+npx netlify init
+npx netlify env:set GEMINI_API_KEY your_api_key
+npx netlify deploy --prod
+
+
+## 🧩 What Took Time (Challenges)
+	•	🧠 Getting Gemini API to work with client-safe logic while avoiding CORS issues
+	•	🔐 Avoiding browser errors by routing Notion & Slack APIs through server (later removed)
+	•	🔧 Tailwind + ShadCN + Next.js App Router setup initially took effort to get clean
+	•	🐛 ESLint’s strict rules blocked Netlify builds — resolved via code rewrites
+
+⸻
+
+## ✅ What We Tackled With Ease
+	•	⚡ MVP features (paste + summarize + format) built quickly and cleanly
+	•	🎨 Styling with Tailwind + ShadCN was fast and visually effective
+	•	🧠 Parsing AI output into clean formatted HTML was smooth using custom logic
+	•	🧪 Testing & iteration via live pasted email threads was efficient
+
+⸻
+
+## 🔭 Future Aspirations
+	•	🧠 Auto-Gmail integration via OAuth + Gmail API
+	•	🧵 Summary template selector (Tweet Thread, Executive Deck, Tasks)
+	•	🔁 Weekly email digests sent via cron
+	•	💾 Backend DB to save user sessions (Postgres + Prisma)
+	•	🔐 User login via Clerk/Auth.js
+	•	📒 Notion/Slack export re-introduced via server-side auth
+	•	💰 Pivot to a lightweight B2B SaaS for productivity-focused teams
+
+⸻
+
+## 🤝 Credits
+
+Built with ❤️ using:
+	•	Next.js
+	•	Gemini AI
+	•	Netlify
+	•	ShadCN UI
+
+⸻
+
+## 📬 License
+
+MIT — free to use and build on. Attribution appreciated!
+
+---
+
+Let me know if you'd like this auto-created as `README.md` in your project directory, or customized further with screenshots and badges.
+
+
