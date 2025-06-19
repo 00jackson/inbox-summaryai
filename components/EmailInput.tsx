@@ -24,7 +24,7 @@ export default function EmailInput({ onSubmit }: EmailInputProps) {
 
   return (
     <div className="space-y-4">
-      <Label htmlFor="email-text">Let's Summarise your next thread.</Label>
+      <Label htmlFor="email-text">Let&apos;s Summarise your next thread.</Label>
       <Textarea
         id="email-text"
         rows={10}
